@@ -43,12 +43,12 @@ Future<List<(DateTime, DateTime)>> listWorkHours(DateTime startDate, DateTime en
 
   for(DateTime workDay in workDays) {
     // Morning
-    DateTime morningStart = workDay.copyWith(hour: 8);
-    DateTime morningEnd = workDay.copyWith(hour: 12);
+    DateTime morningStart = workDay.copyWith(hour: 8, minute: 0);
+    DateTime morningEnd = workDay.copyWith(hour: 12, minute: 0);
 
     // Afternoon
-    DateTime afternoonStart = workDay.copyWith(hour: 13);
-    DateTime afternoonEnd = workDay.copyWith(hour: 19);
+    DateTime afternoonStart = workDay.copyWith(hour: 13, minute: 0);
+    DateTime afternoonEnd = workDay.copyWith(hour: 19, minute: 0);
 
     if(morningStart.isSameDay(startDate)) {
       morningStart = morningStart.copyWith(hour: max(8, startDate.hour));
